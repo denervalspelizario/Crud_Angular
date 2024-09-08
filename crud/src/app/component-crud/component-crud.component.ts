@@ -62,4 +62,40 @@ export class ComponentCrudComponent {
     // visibilidade dos botões
     this.btnCadastrar = false;
   }
+
+  // Função de alteração
+  alterar()
+  {
+    // alterar vetor
+    this.vetor[this.indice] = this.formulario.value as Pessoa;
+
+    // limpar os inputs
+    this.formulario.reset();
+
+    // visibilidade dos botões
+    this.btnCadastrar = true
+  }
+
+  // Função de remoção
+  remover()
+  {
+    // Removendo pessoa do vetor
+    this.vetor.splice(this.indice, 1);
+
+    // Limpeza dos inputs
+    this.formulario.reset();
+
+    // Visibilidade dos botões
+    this.btnCadastrar = true;
+  }
+
+  // Função de cancelamento
+  cancelar()
+  {
+    // Limpeza dos inputs
+    this.formulario.reset();
+
+    // Visibilidade dos botões
+    this.btnCadastrar = true;
+  }
 }
